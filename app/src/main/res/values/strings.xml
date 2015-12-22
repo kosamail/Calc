@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="zero">Divide by zero!</string>
+    <string name="root">The square root of a negative number!</string>
+    <string name="bpi">π</string>
+    <string name="broot">√¯</string>
+    <string name="bstepen">x²</string>
+    <string name="bdrob">1/x</string>
+    <string name="bce">CE</string>
+    <string name="bc">C</string>
+    <string name="bdel">←</string>
+    <string name="bdiv">÷</string>
+    <string name="b7">7</string>
+    <string name="b8">8</string>
+    <string name="b9">9</string>
+    <string name="b4">4</string>
+    <string name="b5">5</string>
+    <string name="b6">6</string>
+    <string name="bminus">-</string>
+    <string name="b1">1</string>
+    <string name="b2">2</string>
+    <string name="b3">3</string>
+    <string name="bplus">+</string>
+    <string name="bsign">±</string>
+    <string name="b0">0</string>
+    <string name="bdot">.</string>
+    <string name="bresult">=</string>
+    <string name="okno">0</string>
+    <string name="bMC">MC</string>
+    <string name="bMplus">M+</string>
+    <string name="bMminus">M-</string>
+    <string name="bMR">MR</string>
+    <string name="big">I got confused. Too long number.</string>
+    <string name="bmult">×</string>
+    <string name="close_app">Close application</string>
+    <string name="rate">Rate app</string>
+    <string name="pref">Settings</string>
+    <string name="rate_full">Please rate this calculator on Google Play</string>
+    <string name="decimal">Decimal places</string>
+    <string name="decimal_full">Set the number of decimal places</string>
+    <string name="fontstyle">Font style</string>
+    <string name="fontstyle_full">Choose the font style</string>
+
+
+</resources>

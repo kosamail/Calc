@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="action_settings">Настройки</string>
+    <string name="root">Квадратные корни из отрицательных чисел извлечь нельзя!</string>
+    <string name="zero">На ноль делить нельзя!</string>
+    <string name="bpi">π</string>
+    <string name="broot">√¯</string>
+    <string name="bstepen">x²</string>
+    <string name="bdrob">1/x</string>
+    <string name="bce">CE</string>
+    <string name="bc">C</string>
+    <string name="bdel">←</string>
+    <string name="bdiv">÷</string>
+    <string name="b7">7</string>
+    <string name="b8">8</string>
+    <string name="b9">9</string>
+    <string name="bmult">×</string>
+    <string name="b4">4</string>
+    <string name="b5">5</string>
+    <string name="b6">6</string>
+    <string name="bminus">-</string>
+    <string name="b1">1</string>
+    <string name="b2">2</string>
+    <string name="b3">3</string>
+    <string name="bplus">+</string>
+    <string name="bsign">±</string>
+    <string name="b0">0</string>
+    <string name="bdot">.</string>
+    <string name="bresult">=</string>
+    <string name="okno">0</string>
+    <string name="bMC">MC</string>
+    <string name="bMplus">M+</string>
+    <string name="bMminus">M-</string>
+    <string name="bMR">MR</string>
+    <string name="big">Слишком большое число. Не так ли?</string>
+    <string name="close_app">Закрыть приложение</string>
+    <string name="rate">Оцените приложение</string>
+    <string name="pref">Настройки</string>
+    <string name="rate_full">Пожалуйста оцените этот калькулятор на Google Play</string>
+    <string name="decimal">Знаки после запятой</string>
+    <string name="decimal_full">Задайте количество знаков после запятой</string>
+    <string name="fontstyle">Стиль шрифта</string>
+    <string name="fontstyle_full">Выбрать стиль шрифта</string>
+
+</resources>

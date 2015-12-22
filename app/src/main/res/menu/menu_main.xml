@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--item Пункт вызова второй активити не использую
+        android:id="@+id/action_settings"
+        android:orderInCategory="1"
+        android:title="@string/action_settings"
+        app:showAsAction="never" /-->
+    <item
+    android:id="@+id/preferences"
+    android:orderInCategory="2"
+    android:title="@string/action_settings"
+    app:showAsAction="never"/>
+
+
+    <item
+        android:id="@+id/close_app"
+        android:orderInCategory="1"
+        android:title="@string/close_app"
+        app:showAsAction="never" />
+<!-- Пункт меню Оценить. не использую
+    <item
+        android:id="@+id/rate"
+        android:orderInCategory="3"
+        android:title="@string/rate"
+        app:showAsAction="never"/>
+/-->
+</menu>

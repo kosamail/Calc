@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="normal">#ffa905</color>
+    <color name="normal2">#dd9405</color>
+    <color name="pressed">#ff391c</color>
+    <color name="pressed2">#dd2e17</color>
+    <color name="border">#6c3621</color>
+    <color name="graynormal">#8fffc47b</color>
+    <color name="graynormal2">#ffc47b</color>
+    <color name="grayborder">#6c3621</color>
+    <color name="graypressed">#ff391c</color>
+    <color name="graypressed2">#dd2e17</color>
+    <color name="darknormal">#95de833e</color>
+    <color name="darknormal2">#da8040</color>
+    <color name="darkborder">#6c3621</color>
+    <color name="darkpressed">#ff391c</color>
+    <color name="darkpressed2">#dd2e17</color>
+
+
+    <color name="startcolor">#c25a3b</color>
+    <color name="centercolor">#ab4a32</color>
+    <color name="endcolor">#6e9f4c31</color>
+
+    <color name="oknotext">#6b3500</color>
+    <color name="oknocolor">#ffd099</color>
+
+
+    <!--
+<color name="normal">#ffa905</color>
+<color name="normal2">#dd9405</color>
+<color name="pressed">#ff391c</color>
+<color name="pressed2">#dd2e17</color>
+<color name="border">#9f4c31</color>
+<color name="graynormal">#e3e3e3</color>
+<color name="graynormal2">#cecece</color>
+<color name="grayborder">#6e6e6e</color>
+<color name="graypressed">#ff391c</color>
+<color name="graypressed2">#dd2e17</color>
+<color name="darknormal">#cdcdcd</color>
+<color name="darknormal2">#b5b5b5</color>
+<color name="darkpressed">#ff391c</color>
+<color name="darkpressed2">#dd2e17</color>
+<color name="darkborder">#484848</color>
+
+<color name="startcolor">#d4d4d4</color>
+<color name="centercolor">#BDBDBD</color>
+<color name="endcolor">#ffffff</color>
+
+<color name="oknotext">#303030</color>
+<color name="oknocolor">#ffd099</color>
+     -->
+
+</resources>

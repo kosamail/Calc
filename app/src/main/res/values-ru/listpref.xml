@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listItems">
+        <item>2 знака</item>
+        <item>4 знака</item>
+        <item>6 знаков</item>
+        <item>8 знаков</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="fontItems">
+        <item>Zekton(базовый)</item>
+        <item>Roboto</item>
+        <item>Digital</item>
+    </string-array>
+
+    <string-array name="fontValues">
+        <item>zekton.ttf</item>
+        <item>roboto.ttf</item>
+        <item>digital.ttf</item>
+    </string-array>
+
+</resources>

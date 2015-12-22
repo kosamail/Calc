@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listItems">
+        <item>2 digits</item>
+        <item>4 digits</item>
+        <item>6 digits</item>
+        <item>8 digits</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="fontItems">
+        <item>Zekton(default)</item>
+        <item>Roboto</item>
+        <item>Digital</item>
+    </string-array>
+
+    <string-array name="fontValues">
+        <item>zekton.ttf</item>
+        <item>roboto.ttf</item>
+        <item>digital.ttf</item>
+    </string-array>
+
+</resources>

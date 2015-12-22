@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'kosamail'
+            keyPassword 'badromance0key'
+            storeFile file('D:/AndroidProjects/Sertifikat/sertifikat.jks')
+            storePassword 'badromance0key'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.andrey.kostin.calc"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 5
+        versionName "1.5"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.0'
+}
