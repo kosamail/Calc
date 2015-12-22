@@ -41,5 +41,8 @@
     <string name="decimal_full">Задайте количество знаков после запятой</string>
     <string name="fontstyle">Стиль шрифта</string>
     <string name="fontstyle_full">Выбрать стиль шрифта</string>
+    <string name="check1">Звук кнопок</string>
+    <string name="soundon">Используется калькуляторный звук клавиш</string>
+    <string name="soundoff">Используются системные настройки звука</string>
 
 </resources>

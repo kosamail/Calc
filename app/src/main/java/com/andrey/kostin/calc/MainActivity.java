@@ -5,7 +5,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 //import android.net.Uri;
+import android.content.res.AssetManager;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
@@ -15,6 +18,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SoundEffectConstants;
 import android.view.View;
 
 import android.widget.Button;
@@ -24,7 +28,7 @@ import android.widget.Toast;
 import java.math.BigDecimal;
 
 
-public class MainActivity extends Activity implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener,SoundPool.OnLoadCompleteListener {
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bsign,bdot,bresult,bplus,bminus,bdiv,bmult, bpi,broot,bstepen,bdrob,bc,bce,bdel,bMplus,bMminus,bMC,bMR;
     TextView okno;
     String stroka="",btouch="";   //переменная для вывода чисел в окно и переменная для внутренних вычислениях при мат операциях
@@ -47,8 +51,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
     Integer floatnumber;           //переменная для передачи числа знаков после точки из настроек
     String fontstyle;           //переменная для передачи имени стиля шрифта из настроек
     String memstroka;           //переменная для передачи последнего результата вычислений в настройки для последующего извлечения при старте
+    Boolean soundclick;    //переменная вывода звука при нажатии кнопки
 
-
+    SoundPool spool; //SoundPool позволяет загрузить звук в память
+    int idplayclick;  //переменная для вывода встроенного звука нажатия
+    final int STREAMS_COUNT = 1; //количество одновременно проигрываемых звуков
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +67,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
         sp= PreferenceManager.getDefaultSharedPreferences(this);//получаем ШаредПреференсес которое работает с файлом настроек
         //sp.edit().clear().commit();//команда очистки настроек (пока мне не нужна)
 
-
-
+        //подготавливаем проигрывание звука при нажатии клавиш
+        spool = new SoundPool(STREAMS_COUNT, AudioManager.STREAM_MUSIC, 0); //создаем SoundPool, На вход ему передаем максимальное кол-во одновременно воспроизводимых файлов, аудио-поток который будет использоваться, некий параметр качества- рекомендуется передавать туда 0
+        spool.setOnLoadCompleteListener(this);                              //устанавливаем слушателя загрузки. Загрузка аудио-файлов происходит асинхронно, и по ее окончании срабатывает метод onLoadComplete этого слушателя
+        try {
+            idplayclick = spool.load(getAssets().openFd("buttonclick.ogg"), 1); // load возвращает нам ID загруженного файла. Используя этот ID, мы будем проигрывать файл клика
+            }catch(Exception e) { Log.d(TAG, "\n"+"Перехвачено исключение при обращении к звуку"); }//отлавливаем исключения при обращении к звуку
 
 
 
@@ -246,6 +257,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 @Override
     protected void onResume(){
     try{
+        soundclick=sp.getBoolean("checksound",true);//считываем настройку вывода звука нажатия кнопки из файла настроек (по умолчанию включен)
+
         floatnumber=Integer.valueOf(sp.getString("floatnumber", "6"));         //считываем содержимое строки параметра флоатнамбер из файла настроек и преобразуем в интеджер( по умолчанию 6)
 
         fontstyle=sp.getString("fontstyle", "zekton.ttf");         //считываем содержимое строки параметра фонтстиль из файла настроек (по умолчанию если настройка пуста назначаем шрифт зектон)
@@ -257,7 +270,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         Log.d(TAG,"Содержимое файла настроек: floatnumber "+floatnumber+"\n"+
                 "fontstyle "+fontstyle+"\n"+
-                "memstroka "+memstroka+"\n");
+                "memstroka "+memstroka+"\n"+
+                "soundclick "+soundclick+"\n");
 
     }catch(Exception e) { Log.d(TAG, "\n"+"Перехвачено исключение в методе onResume"); }//отлавливаем исключение в методе onResume
     super.onResume();
@@ -314,8 +328,6 @@ case R.id.preferences:
         String symbol; //переменная в которой будем хранить символ с кнопки
 
         try{
-
-
 
         id=v.getId();  //присваиваем переменной ид нажатой кнопки
 
@@ -470,6 +482,17 @@ case R.id.preferences:
 
             default:break;
                     }
+
+            if(soundclick) { spool.play(idplayclick, 1, 1, 0, 0, 1);               //если в настройках приложения звук включен, проигрываем свой звук нажатия клавиш
+                                        //- ID файла. Тот самый, который мы получили от метода load.
+                                        //- громкость левого канала (от 0.0 до 1.0)
+                                        //- громкость правого канала (от 0.0 до 1.0)
+                                        //- приоритет. Этот приоритет уже не декоративный, а вполне себе используемый. Далее увидим, где он нужен.
+                                        //- количество повторов. Т.е. файл будет воспроизведен один раз точно + то количество раз, которое вы здесь укажете
+                                        //- скорость воспроизведения. Можно задать от половины нормальной скорости до двойной (0.5 - 2).
+                            }
+
+
         }catch(Exception e) { Log.d(TAG, "\n"+"Перехвачено исключение при нажатии кнопки"); }//отлавливаем исключения при нажатии кнопки
 
     }
@@ -549,4 +572,7 @@ case R.id.preferences:
         ed.apply();                             //Чтобы данные сохранились, необходимо выполнить apply.
     }
 
+    @Override
+    public void onLoadComplete(SoundPool soundPool, int i, int i1) {//Метод onLoadComplete слушателя OnLoadCompleteListener выполняется, когда SoundPool загружает файл. На вход вы получаете сам SoundPool, ID файла и статус (0, если успешно)
+     }
 }

@@ -3,6 +3,7 @@ package com.andrey.kostin.calc;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
@@ -14,6 +15,15 @@ public class PrefActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         PreferenceScreen rootScreen = getPreferenceManager().createPreferenceScreen(this);// создаем экран
         setPreferenceScreen(rootScreen);        // говорим Activity, что rootScreen - корневой
+
+        //создаем чекбокс для включения-выключения звука нажатия кнопки
+        CheckBoxPreference checksound = new CheckBoxPreference(this);
+        checksound.setKey("checksound");
+        checksound.setTitle(R.string.check1);
+        checksound.setSummaryOn(R.string.soundon);
+        checksound.setSummaryOff(R.string.soundoff);
+        checksound.setDefaultValue(true);
+        rootScreen.addPreference(checksound);
 
         //создаем итем листпреференс для выбора количества знаков после запятой
         ListPreference listdecimal = new ListPreference(this);

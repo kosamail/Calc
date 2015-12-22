@@ -41,6 +41,9 @@
     <string name="decimal_full">Set the number of decimal places</string>
     <string name="fontstyle">Font style</string>
     <string name="fontstyle_full">Choose the font style</string>
+    <string name="check1">Вutton sound</string>
+    <string name="soundon">Use сalculator sound settings</string>
+    <string name="soundoff">Use the system sound settings</string>
 
 
 </resources>
